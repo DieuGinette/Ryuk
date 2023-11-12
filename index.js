@@ -12,7 +12,8 @@ client.on("messageCreate", (message) => {
     const prefix = "!";
     if (!message.content.startsWith(prefix)) return;
 
-    const name = message.content.split(" ")[0].replace(prefix, "");
+    const arrayMessage = message.content.split(" ");
+    const name = arrayMessage[0].slice(prefix.length, arrayMessage[0].length);
     const command = client.commands.get(name);
 
     command.run(client, message)
