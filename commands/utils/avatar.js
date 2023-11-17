@@ -4,7 +4,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName("avatar")
         .setDescription("Renvoie l'avatar d'un utilisateur")
-        .setDMPermission(true)
+        .setDMPermission(false)
         .setDefaultMemberPermissions(PermissionFlagsBits.SendMessages)
         .addUserOption(option =>
             option.setName('utilisateur')
