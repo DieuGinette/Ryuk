@@ -1,8 +1,13 @@
-module.exports = {
-    name: "ping",
-    description: "Donne le ping du bot",
+const { SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
 
-    async run(client, message) {
-        message.reply(`Pong :ping_pong: La latence du bot est de :  \`${client.ws.ping}\` ms.`)
+module.exports = {
+    data: new SlashCommandBuilder()
+        .setName("ping")
+        .setDescription("Renvoie la latence du bot")
+        .setDMPermission(true)
+        .setDefaultMemberPermissions(PermissionFlagsBits.SendMessages),
+
+    async run(interaction) {
+        await interaction.reply(`Pong :ping_pong: La latence du bot est de :  \`${interaction.client.ws.ping}\` ms.`)
     }
 };
