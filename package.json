@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "discord.js": "^14.13.0",
+    "discord.js-akinator": "^4.1.2",
     "dotenv": "^16.3.1",
     "fs": "^0.0.1-security"
   },
